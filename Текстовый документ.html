@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Голос. Женский. Живой. | Мини-курс раскрепощения голоса</title>
+    <meta name="description" content="3-дневный курс для женщин, которые хотят вернуть свой естественный голос">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Manrope:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        /* Базовые стили */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Manrope', sans-serif;
+            font-size: 20px;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f0ff;
+            scroll-behavior: smooth;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Типографика */
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: #4b2e83;
+            line-height: 1.3;
+            margin-bottom: 1em;
+        }
+        
+        h1 { 
+            font-size: 2.8rem; 
+            text-shadow: 0 2px 10px rgba(106, 90, 205, 0.2);
+        }
+        h2 { font-size: 2.2rem; }
+        
+        p, ul {
+            margin-bottom: 1.5em;
+            font-size: 1.1rem;
+        }
+        
+        /* Кнопки */
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #4a2c8a 0%, #6a5acd 100%);
+            color: white;
+            padding: 16px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            margin: 20px 0;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 20px rgba(106, 90, 205, 0.3),
+                        inset 0 1px 1px rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(106, 90, 205, 0.4);
+            background: linear-gradient(135deg, #5a3c9a 0%, #7a6add 100%);
+        }
+        
+        .btn:active {
+            transform: translateY(1px);
+        }
+        
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                to bottom right,
+                rgba(255, 255, 255, 0.3) 0%,
+                rgba(255, 255, 255, 0) 60%
+            );
+            transform: rotate(30deg);
+            transition: all 0.6s ease;
+        }
+        
+        .btn:hover::after {
+            animation: shine 1.5s infinite;
+        }
+        
+        @keyframes shine {
+            0% { left: -50%; }
+            100% { left: 150%; }
+        }
+        
+        /* Секции */
+        section {
+            padding: 80px 0;
+            position: relative;
+        }
+        
+        section::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(106, 90, 205, 0.3), transparent);
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #6a5acd 0%, #8A2BE2 100%);
+            color: white;
+            text-align: center;
+            padding: 120px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(
+                circle at 70% 30%, 
+                rgba(255, 255, 255, 0.15) 0%, 
+                transparent 50%
+            );
+            animation: rotate 20s linear infinite;
+            z-index: 0;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h1, .hero p {
+            color: white;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Блоки с фоном */
+        .highlight {
+            background-color: rgba(255, 255, 255, 0.85);
+            padding: 35px;
+            border-radius: 20px;
+            margin: 30px 0;
+            box-shadow: 0 10px 30px rgba(106, 90, 205, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(5px);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+        
+        .highlight:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(106, 90, 205, 0.15);
+        }
+        
+        /* Списки */
+        ul.features {
+            list-style: none;
+        }
+        
+        ul.features li {
+            position: relative;
+            padding-left: 40px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        ul.features li:hover {
+            transform: translateX(5px);
+        }
+        
+        ul.features li:before {
+            content: "♪";
+            position: absolute;
+            left: 0;
+            color: #8A2BE2;
+            font-size: 1.3em;
+            line-height: 1;
+            transition: all 0.3s ease;
+        }
+        
+        ul.features li:hover:before {
+            transform: scale(1.2);
+            color: #6a5acd;
+        }
+        
+        /* Анимации появления */
+        [data-animate] {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        
+        [data-animate].animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Декоративные элементы */
+        .note {
+            position: absolute;
+            font-size: 120px;
+            color: rgba(106, 90, 205, 0.1);
+            z-index: -1;
+            user-select: none;
+        }
+        
+        .note-1 { top: 50px; right: 50px; }
+        .note-2 { bottom: 30px; left: 40px; }
+        
+        /* Адаптив */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2rem; }
+            h2 { font-size: 1.8rem; }
+            section { padding: 60px 0; }
+            
+            .highlight {
+                padding: 25px;
+            }
+            
+            .note {
+                font-size: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Герой -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="note note-1">♫</div>
+            <div class="note note-2">♬</div>
+            <h1 data-animate>Голос. Женский. Живой.</h1>
+            <p data-animate style="transition-delay: 0.2s">Ты хочешь петь, но боишься? Голос дрожит или "не твой"?</p>
+            <a href="#cta" class="btn" data-animate style="transition-delay: 0.4s">Вернуть свой голос</a>
+        </div>
+    </section>
+    
+    <!-- О курсе -->
+    <section>
+        <div class="container">
+            <div class="highlight" data-animate>
+                <h2>Этот курс — про возвращение к себе</h2>
+                <p>Мы не будем делать вид, что ты вокалистка. Будем вспоминать, что ты — звучащая живая женщина.</p>
+                <p><strong>3 дня. 3 встречи. Голос. Тело. Дыхание.</strong></p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Для кого -->
+    <section style="background-color: #f0e9ff;">
+        <div class="container">
+            <h2 data-animate>Кому подойдёт</h2>
+            <ul class="features">
+                <li data-animate style="transition-delay: 0.1s">Женщинам, которые хотят петь, но боятся</li>
+                <li data-animate style="transition-delay: 0.2s">Тем, кто не может говорить "нет"</li>
+                <li data-animate style="transition-delay: 0.3s">Тем, кто потерял контакт с собой</li>
+                <li data-animate style="transition-delay: 0.4s">Всем, кто чувствует: "мой голос спит"</li>
+            </ul>
+        </div>
+    </section>
+    
+    <!-- Что будет -->
+    <section>
+        <div class="container">
+            <h2 data-animate>Что будет на курсе</h2>
+            <ul class="features">
+                <li data-animate style="transition-delay: 0.1s">Тёплое, безопасное пространство (без оценок)</li>
+                <li data-animate style="transition-delay: 0.2s">Упражнения на дыхание и заземление</li>
+                <li data-animate style="transition-delay: 0.3s">Распевки и голосовые вибрации</li>
+                <li data-animate style="transition-delay: 0.4s">Тело как инструмент звука</li>
+                <li data-animate style="transition-delay: 0.5s">Освобождение от страха проявления</li>
+                <li data-animate style="transition-delay: 0.6s">Возможность попеть в кругу</li>
+            </ul>
+        </div>
+    </section>
+    
+    <!-- Программа -->
+    <section style="background-color: #f0e9ff;">
+        <div class="container">
+            <h2 data-animate>Программа курса</h2>
+            <div class="highlight" data-animate style="transition-delay: 0.1s">
+                <h3>День 1 — «Дыхание. Дом. Безопасность»</h3>
+                <p>Практики дыхания, гудение, расслабление тела</p>
+            </div>
+            <div class="highlight" data-animate style="transition-delay: 0.2s">
+                <h3>День 2 — «Тело поёт. Голос оживает»</h3>
+                <p>Телесные и голосовые упражнения, распевки</p>
+            </div>
+            <div class="highlight" data-animate style="transition-delay: 0.3s">
+                <h3>День 3 — «Разрешаю себе звучать»</h3>
+                <p>Импровизация, маленькая песня, круг завершения</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Результаты -->
+    <section>
+        <div class="container">
+            <h2 data-animate>Что ты получишь</h2>
+            <ul class="features">
+                <li data-animate style="transition-delay: 0.1s">Мягкое возвращение к себе через голос</li>
+                <li data-animate style="transition-delay: 0.2s">Уверенность, свободу, принятие</li>
+                <li data-animate style="transition-delay: 0.3s">Живую вибрацию в теле</li>
+                <li data-animate style="transition-delay: 0.4s">Принятие своего голоса — и себя в нём</li>
+            </ul>
+        </div>
+    </section>
+    
+    <!-- Формат -->
+    <section id="cta" style="background-color: #6a5acd; color: white; text-align: center;">
+        <div class="container">
+            <div class="highlight" data-animate style="background-color: rgba(255, 255, 255, 0.9);">
+                <h2 style="color: #4b2e83;">Формат курса</h2>
+                <p style="color: #555;">Онлайн, 3 дня по 30–60 минут</p>
+                <p style="color: #555;">Zoom, Telegram или аудио</p>
+                <p style="color: #555;">Оплата: донейшн или 1 111₽</p>
+                <a href="https://t.me/ваш_ник" class="btn">Записаться в Telegram</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Анимация при скролле
+        document.addEventListener('DOMContentLoaded', function() {
+            const animateElements = document.querySelectorAll('[data-animate]');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animated');
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            animateElements.forEach(element => {
+                observer.observe(element);
+            });
+            
+            // Плавная прокрутка для якорных ссылок
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
